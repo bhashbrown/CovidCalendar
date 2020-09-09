@@ -56,6 +56,15 @@ body {
     max-width: 50rem;
 }
 
+.cal-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 3rem auto 0rem auto;
+    font-family: 'Fira Code', monospace;
+    max-width: 50rem;
+}
+
 .cal-box {
     text-align: center;
     color: rgb(33, 51, 51);

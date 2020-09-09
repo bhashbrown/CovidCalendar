@@ -1,7 +1,7 @@
 import React from 'react';
 // import { render } from 'react-dom';
 import Form from './Form.jsx';
-// import CalContainer from './CalContainer.jsx';
+import CalContainer from './CalContainer.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class App extends React.Component {
 
   render() {
     const {
-      date, time, location, people,
+      date, time, location, people, entry,
     } = this.state;
     return (
       <div>
@@ -79,9 +79,9 @@ class App extends React.Component {
           location={location}
           people={people}
         />
-        {/* <CalContainer
-          entry={this.state.entry}
-        /> */}
+        <CalContainer
+          entry={entry}
+        />
       </div>
     );
   }
