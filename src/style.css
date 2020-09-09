@@ -17,6 +17,16 @@ body {
     max-width: 15rem;
 }
 
+.entry-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Fira Code', monospace;
+    max-width: 15rem;
+}
+
 #form-buttons-container {
     display: inline;
 }

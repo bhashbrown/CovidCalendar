@@ -1,27 +1,54 @@
 import React from 'react';
 
 const Form = (props) => {
-  const { clickSubmit, clickUndo } = props;
+  const {
+    handleDate, handleTime, handleLoc, handlePeople, clickSubmit,
+    clickUndo, date, time, location, people,
+  } = props;
   return (
-    <form id="entry-form">
+    <form id="entry-form" className="entry-form">
       <label htmlFor="date-entry">
         Date:
-        <input type="date" id="date-entry" />
+        <br />
+        <input
+          type="date"
+          id="date-entry"
+          value={date}
+          onChange={handleDate}
+        />
       </label>
       <br />
       <label htmlFor="time-entry">
         Time:
-        <input type="time" id="time-entry" />
+        <br />
+        <input
+          type="time"
+          id="time-entry"
+          value={time}
+          onChange={handleTime}
+        />
       </label>
       <br />
       <label htmlFor="loc-entry">
         Location:
-        <input type="text" id="loc-entry" />
+        <br />
+        <input
+          type="text"
+          id="loc-entry"
+          value={location}
+          onChange={handleLoc}
+        />
       </label>
       <br />
       <label htmlFor="person-entry">
         People Visited:
-        <input type="text" id="person-entry" />
+        <br />
+        <input
+          type="text"
+          id="person-entry"
+          value={people}
+          onChange={handlePeople}
+        />
       </label>
       <br />
       <span id="form-buttons-container">
