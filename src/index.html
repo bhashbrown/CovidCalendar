@@ -14,15 +14,49 @@
     <h1 id="main-title">COVID Calendar</h1>
   </header>
   <div id="app">
+
     <form id="entry-form">
       <label for="date-entry">Date: </label>
       <input type="date" id="date-entry"><br>
       <label for="time-entry">Time: </label>
       <input type="time" id="time-entry"><br>
-      <label for="text-entry">Location: </label>
-      <input type="text" id="text-entry"><br>
-      <input type="button" value="Submit">
+      <label for="loc-entry">Location: </label>
+      <input type="text" id="loc-entry"><br>
+      <label for="person-entry">People Visited: </label>
+      <input type="text" id="person-entry"><br>
+      <span id="form-buttons-container">
+        <input type="button" class="form-button" value="Submit">
+        <input type="button" class="form-button" value="Undo">
+      </span>
     </form>  
+
+    <div id="cal-container">
+      <div class="cal-box">
+        <h2>Today</h2>
+        <p>09/08/2020</p>
+
+        <div class="cal-entry">
+          <p>Time: 11:00AM<br>Location: Los Angeles<br>People Visited: N/A</p>
+        </div>
+
+        <div class="cal-entry">
+          <p>Time: 1:00PM<br>Location: DTLA<br>People Visited: George</p>
+        </div>
+      </div>
+
+      <div class="cal-box">
+        <h2>1 Day Ago</h2>
+      </div>
+
+      <div class="cal-box">
+        <h2>2 Days Ago</h2>
+      </div>
+    </div>
+
   </div>
+  
+  <div id="app2" ></div>
+  <script src="dist/bundle.js"></script>
+
 </body>
 </html>
