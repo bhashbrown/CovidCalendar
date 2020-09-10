@@ -1,5 +1,6 @@
+/* eslint-disable import/extensions */
 import React from 'react';
-// import { render } from 'react-dom';
+
 import Form from './Form.jsx';
 import CalContainer from './CalContainer.jsx';
 

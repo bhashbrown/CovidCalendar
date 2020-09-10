@@ -1,13 +1,13 @@
-const { webpack } = require('webpack');
+// const { webpack } = require('webpack');
 const path = require('path');
 
 module.exports = {
   entry: './src/main.js',
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist',
+    publicPath: '/dist/',
   },
   module: {
     rules: [
@@ -33,5 +33,15 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    // contentBase: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
+    port: 8080,
+    compress: true,
+    proxy: {
+      '/dist': 'http://localhost:3000',
+      '/': 'http://localhost:3000',
+    },
   },
 };

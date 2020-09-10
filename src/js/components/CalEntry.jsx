@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 // each entry will be written with time, location, and people from the props.entry object

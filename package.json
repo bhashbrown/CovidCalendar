@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon server/server.js --open",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode development"
+    "build": "NODE_ENV=production webpack & npm start",
+    "dev": "NODE_ENV=development npm start & webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -36,10 +37,12 @@
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "pg": "^8.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

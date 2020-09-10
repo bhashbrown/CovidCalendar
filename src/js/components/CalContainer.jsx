@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-plusplus */
 import React from 'react';
