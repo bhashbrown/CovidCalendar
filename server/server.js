@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-// const apiRouter = require('./api.js');
+const apiRouter = require('./api.js');
 
 const port = 3000;
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use('/dist', express.static(path.resolve(__dirname, '../dist')));
 
 // use route handlers to access database
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 // responds with main app
 app.get('/', (req, res) => {

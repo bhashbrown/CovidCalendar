@@ -49,6 +49,16 @@ class App extends React.Component {
         location: state.location,
         people: state.people,
       };
+      // use a fetch request to post new entry into the database
+      fetch('/api/entry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(entryObj),
+      })
+        .then(response => response.json())
+        .then(data => console.log('Successful Entry Submitted', data))
+        .catch((err) => console.log('App.jsx clickSubmit: entry submit error', err));
+      // entry array of objects is updated with new entry object
       const entry = [...state.entry];
       entry.push(entryObj);
       return { entry };
@@ -64,15 +74,15 @@ class App extends React.Component {
     });
   }
 
-//   componentDidMount() {
-//     fetch('/api/')
-//       .then((res) => res.json())
-//       .then((entry) => {
-//         if (!Array.isArray(entry)) entry = [];
-//         return this.setState({ entry });
-//       })
-//       .catch((err) => console.log('App.jsx componentDidMount: get entries error', err));
-//   }
+  componentDidMount() {
+    fetch('/api/')
+      .then((res) => res.json())
+      .then((entry) => {
+        if (!Array.isArray(entry)) entry = [];
+        return this.setState({ entry });
+      })
+      .catch((err) => console.log('App.jsx componentDidMount: get entries error', err));
+  }
 
   render() {
     const {
