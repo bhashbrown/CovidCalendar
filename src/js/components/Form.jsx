@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
+// this form contains everything that will change state
+// every input handles an event or click
 const Form = (props) => {
   const {
     handleDate, handleTime, handleLoc, handlePeople, clickSubmit,

@@ -6,6 +6,7 @@ import CalContainer from './CalContainer.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // state will keep track of input fields as well as an array of entry submissions
     this.state = {
       date: '',
       time: '',
@@ -37,6 +38,8 @@ class App extends React.Component {
     this.setState({ people: e.target.value });
   }
 
+  // when submit button is clicked
+  // all the state properties will be added into the entry array as an object
   clickSubmit() {
     this.setState((state) => {
       const entryObj = {
@@ -47,16 +50,15 @@ class App extends React.Component {
       };
       const entry = [...state.entry];
       entry.push(entryObj);
-      console.log('*Entry Array*', entry);
       return { entry };
     });
   }
 
+  // when undo button is clicked, the last entry in the array will be removed
   clickUndo() {
     this.setState((state) => {
       const entry = [...state.entry];
       entry.pop();
-      console.log('*updated Entry Arr*', entry);
       return { entry };
     });
   }
@@ -86,13 +88,5 @@ class App extends React.Component {
     );
   }
 }
-
-// const App = (props) => (
-//   <div>
-//     {/* <h1>App Component Test</h1> */}
-//     <Form />
-//     <CalContainer />
-//   </div>
-// );
 
 export default App;
