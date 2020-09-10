@@ -85,6 +85,6 @@ body {
     margin: 0.3rem auto 0.3rem auto;
     border: 0.1rem solid darkslategray;
     border-radius: 0.3rem;
-    background: lightgray;
+    background: rgb(236, 236, 236);
     color: darkslategray;
 }

@@ -64,6 +64,16 @@ class App extends React.Component {
     });
   }
 
+//   componentDidMount() {
+//     fetch('/api/')
+//       .then((res) => res.json())
+//       .then((entry) => {
+//         if (!Array.isArray(entry)) entry = [];
+//         return this.setState({ entry });
+//       })
+//       .catch((err) => console.log('App.jsx componentDidMount: get entries error', err));
+//   }
+
   render() {
     const {
       date, time, location, people, entry,
