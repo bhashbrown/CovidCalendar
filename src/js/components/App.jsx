@@ -55,8 +55,8 @@ class App extends React.Component {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(entryObj),
       })
-        .then(response => response.json())
-        .then(data => console.log('Successful Entry Submitted', data))
+        .then((response) => response.json())
+        .then((data) => console.log('Successful Entry Submitted', data))
         .catch((err) => console.log('App.jsx clickSubmit: entry submit error', err));
       // entry array of objects is updated with new entry object
       const entry = [...state.entry];
@@ -69,7 +69,18 @@ class App extends React.Component {
   clickUndo() {
     this.setState((state) => {
       const entry = [...state.entry];
-      entry.pop();
+      const deletedEntry = entry.pop();
+
+      // use a fetch request to delete entry in the database
+      fetch('/api/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(deletedEntry),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log('Successful Entry Submitted', data))
+        .catch((err) => console.log('App.jsx clickSubmit: entry submit error', err));
+
       return { entry };
     });
   }

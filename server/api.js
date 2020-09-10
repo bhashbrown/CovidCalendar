@@ -12,6 +12,8 @@ router.post('/entry',
   calController.postEntry,
   (req, res) => res.status(200).json(res.locals.newEntry));
 
-
+router.post('/delete',
+  calController.deleteEntry,
+  (req, res) => res.status(200).json(res.locals.delete));
 
 module.exports = router;
