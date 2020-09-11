@@ -7,7 +7,7 @@ calController.getEntries = (req, res, next) => {
     SELECT * FROM entries 
     WHERE userId = 1;
   `;
-  db.query(entries, (err, result, fields) => {
+  db.query(entries, (err, result) => {
     if (err) throw err;
     res.locals.entries = result.rows;
     return next();

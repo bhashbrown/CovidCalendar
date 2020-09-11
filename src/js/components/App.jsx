@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/extensions */
 import React from 'react';
 
@@ -21,6 +22,17 @@ class App extends React.Component {
     this.handlePeople = this.handlePeople.bind(this);
     this.clickSubmit = this.clickSubmit.bind(this);
     this.clickUndo = this.clickUndo.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('/api/')
+      .then((res) => res.json())
+      .then((entry) => {
+        // eslint-disable-next-line no-param-reassign
+        if (!Array.isArray(entry)) entry = [];
+        return this.setState({ entry });
+      })
+      .catch((err) => console.log('App.jsx componentDidMount: get entries error', err));
   }
 
   handleDate(e) {
@@ -83,16 +95,6 @@ class App extends React.Component {
 
       return { entry };
     });
-  }
-
-  componentDidMount() {
-    fetch('/api/')
-      .then((res) => res.json())
-      .then((entry) => {
-        if (!Array.isArray(entry)) entry = [];
-        return this.setState({ entry });
-      })
-      .catch((err) => console.log('App.jsx componentDidMount: get entries error', err));
   }
 
   render() {
