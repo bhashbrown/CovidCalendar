@@ -1,1 +1,1 @@
-# solo-project
+# Covid Calendar
